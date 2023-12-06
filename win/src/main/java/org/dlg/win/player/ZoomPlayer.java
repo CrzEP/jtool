@@ -4,6 +4,7 @@ import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
 import java.io.*;
+import java.nio.file.Files;
 
 /**
  *
@@ -15,11 +16,10 @@ import java.io.*;
  */
 public class ZoomPlayer {
 
-    public static void main(String[] args) throws FileNotFoundException {
-        String path = "D:\\document\\javaCode\\mvcdemo\\slvoice\\cache\\joy.wav";
+    public static void main(String[] args) throws IOException {
         String beep = "D:\\cache\\cloudMusic\\Andreas Waldetoft - Countryside.mp3";
         File file = new File(beep);
-        play(new FileInputStream(file));
+        play(Files.newInputStream(file.toPath()));
     }
 
     /**

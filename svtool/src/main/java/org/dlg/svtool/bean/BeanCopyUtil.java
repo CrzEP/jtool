@@ -3,7 +3,9 @@ package org.dlg.svtool.bean;
 import org.springframework.beans.BeanUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
 /**
@@ -21,7 +23,6 @@ public class BeanCopyUtil extends BeanUtils {
     public static <S, T> List<T> copyListProperties(List<S> sources, Supplier<T> target) {
         return copyListProperties(sources, target, null);
     }
-
 
     /**
      * 带回调函数的集合数据的拷贝（可自定义字段拷贝规则）
@@ -54,4 +55,5 @@ public class BeanCopyUtil extends BeanUtils {
          */
         void callBack(S t, T s);
     }
+
 }

@@ -33,6 +33,7 @@ public class MessageBox {
      * @param message 消息内容
      */
     public static void toast(String title, String message) {
+        init();
         lib.MessageBoxA(0, message, title, 0);
     }
 
